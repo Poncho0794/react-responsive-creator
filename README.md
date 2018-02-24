@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -11,6 +12,7 @@
 <body class="stackedit">
   <div class="stackedit__html"><h1 id="react-responsive-creator">react-responsive-creator</h1>
 <p>react-responsive-creator is a High order component, that recives the parent component and uses it as a container, the Desktop version and the Mobile version, it helps when the mobile and the desktop version are totally diferent and you need 2 differents components.</p>
+<p><strong>NOTE:</strong> the breakpoint is <em>1024px</em></p>
 <h1 id="getting-starter">Getting starter</h1>
 <h2 id="install">Install</h2>
 <pre><code>npm install react-responsive-creator
@@ -149,3 +151,5 @@ export default test;
 </body>
 
 </html>
+react-responsive-creator
+Mostrando react-responsive-creator

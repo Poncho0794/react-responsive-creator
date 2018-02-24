@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-creator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "responsive container creator with react",
   "main": "build/index.js",
   "scripts": {
