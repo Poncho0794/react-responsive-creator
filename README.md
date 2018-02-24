@@ -1,23 +1,3 @@
-react-responsive-creator
-No compartido
-Tipo
-HTML
-Tamaño
-17 KB (17,734 bytes)
-Almacenamiento usado
-17 KB (17,734 bytes)
-Ubicación
-Mi unidad
-Propietario
-yo
-Modificado el
-01:43 por mí
-Abierto el
-01:43 por mí
-Creado el
-01:24 con StackEdit
-Agregar descripción
-Los lectores pueden descargar.
 <!DOCTYPE html>
 <html>
 
