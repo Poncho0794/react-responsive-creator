@@ -1,4 +1,23 @@
-
+react-responsive-creator
+No compartido
+Tipo
+HTML
+Tamaño
+17 KB (17,734 bytes)
+Almacenamiento usado
+17 KB (17,734 bytes)
+Ubicación
+Mi unidad
+Propietario
+yo
+Modificado el
+01:43 por mí
+Abierto el
+01:43 por mí
+Creado el
+01:24 con StackEdit
+Agregar descripción
+Los lectores pueden descargar.
 <!DOCTYPE html>
 <html>
 
@@ -22,102 +41,102 @@
 </code></pre>
 <h2 id="usage">Usage</h2>
 <p>You need the container component like this (in this example, we are going to use redux):</p>
-<pre><code>import React, { Component } from 'react' //eslint-disable-line
-import TestDesktop from './TestDesktop'
-import TestMobile from './TestMobile'
-import {withResponsive} from 'react-responsive-creator'
-import { connect } from 'react-redux'
-import {testAction} from '../../actions/TestAction'
+<pre class=" language-javascript"><code class="prism  language-javascript">   <span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span> <span class="token comment">//eslint-disable-line</span>
+   <span class="token keyword">import</span> TestDesktop <span class="token keyword">from</span> <span class="token string">'./TestDesktop'</span>
+   <span class="token keyword">import</span> TestMobile <span class="token keyword">from</span> <span class="token string">'./TestMobile'</span>
+   <span class="token keyword">import</span> <span class="token punctuation">{</span>withResponsive<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-responsive-creator'</span>
+   <span class="token keyword">import</span> <span class="token punctuation">{</span> connect <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-redux'</span>
+   <span class="token keyword">import</span> <span class="token punctuation">{</span>testAction<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'../../actions/TestAction'</span>
 
-class Test extends Component {
-	constructor(props){
-		super(props)
-		this.onSearch = this.onSearch.bind(this);
-		console.log(this);
-	}
+   <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+   	<span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   		<span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+   		<span class="token keyword">this</span><span class="token punctuation">.</span>onSearch <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>onSearch<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   	<span class="token punctuation">}</span>
 
-	onSearch(test) {
-		console.log(test);
-	}
+   	<span class="token function">onSearch</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   		console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   	<span class="token punctuation">}</span>
 
-	render(){
-    	/*This is important to show the 2 versions of the component */
-		return &lt;div&gt;{this.props.children}&lt;/div&gt;
-	}
-}
+   	<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       	<span class="token comment">/*This is important to show the 2 versions of the component */</span>
+   		<span class="token keyword">return</span> <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>children<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+   	<span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
 
-const mapState = state =&gt; ({
-	test:state.test
-})
+   <span class="token keyword">const</span> <span class="token function-variable function">mapState</span> <span class="token operator">=</span> state <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+   	test<span class="token punctuation">:</span>state<span class="token punctuation">.</span>test
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-const mapDisptach = (dispatch) =&gt; ({
-	testAction: userAgent =&gt; {dispatch(testAction(userAgent))}
-})
+   <span class="token keyword">const</span> <span class="token function-variable function">mapDisptach</span> <span class="token operator">=</span> <span class="token punctuation">(</span>dispatch<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+   	testAction<span class="token punctuation">:</span> userAgent <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token function">testAction</span><span class="token punctuation">(</span>userAgent<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+   <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-export default connect(mapState,mapDisptach)(withResponsive(Test,TestDesktop,TestMobile))
+   <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">connect</span><span class="token punctuation">(</span>mapState<span class="token punctuation">,</span>mapDisptach<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token function">withResponsive</span><span class="token punctuation">(</span>Test<span class="token punctuation">,</span>TestDesktop<span class="token punctuation">,</span>TestMobile<span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre>
 <p>And the <code>TestDesktop.js</code> looks like:</p>
-<pre><code>import React, { Component } from 'react'; //eslint-disable-line
+<pre class=" language-javascript"><code class="prism  language-javascript">    <span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span> <span class="token comment">//eslint-disable-line</span>
 
-class TestDesktop  extends Component{
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
+    <span class="token keyword">class</span> <span class="token class-name">TestDesktop</span>  <span class="token keyword">extends</span> <span class="token class-name">Component</span><span class="token punctuation">{</span>
+      <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>handleClick <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
 
-  handleClick(){
-    this.props.testAction(window.navigator.userAgent);//eslint-disable-line
-  }
-  render(){
-    return (
-      &lt;div&gt;
-        &lt;span&gt;Desktop&lt;/span&gt;
-        &lt;button onClick={this.handleClick}&gt;Test&lt;/button&gt;
-      &lt;/div&gt;
-    );
-  }
-}
-export default TestDesktop;
+      <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">testAction</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//eslint-disable-line</span>
+      <span class="token punctuation">}</span>
+      <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>Desktop<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">}</span><span class="token operator">&gt;</span>Test<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> TestDesktop<span class="token punctuation">;</span>
 </code></pre>
 <p>And the <code>TestMobile.js</code> looks like:</p>
-<pre><code>import React, { Component } from 'react' //eslint-disable-line
+<pre class=" language-javascript"><code class="prism  language-javascript">   <span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> Component <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span> <span class="token comment">//eslint-disable-line</span>
 
-class TestMobile  extends Component{
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick(){
- 	 this.props.testAction(window.navigator.userAgent);//eslint-disable-line
- 	}
-  render(){
-    return (
-      &lt;div&gt;
-        &lt;span&gt;Mobile&lt;/span&gt;
-        &lt;button onClick={this.handleClick}&gt;Test&lt;/button&gt;
-        &lt;span&gt;REDUX: {JSON.stringify(this.props.test)}&lt;/span&gt;
-      &lt;/div&gt;
-    );
-  }
-}
-export default TestMobile;
+    <span class="token keyword">class</span> <span class="token class-name">TestMobile</span>  <span class="token keyword">extends</span> <span class="token class-name">Component</span><span class="token punctuation">{</span>
+      <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>handleClick <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     	 <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">testAction</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//eslint-disable-line</span>
+     	<span class="token punctuation">}</span>
+      <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>Mobile<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">}</span><span class="token operator">&gt;</span>Test<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>span<span class="token operator">&gt;</span>REDUX<span class="token punctuation">:</span> <span class="token punctuation">{</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>test<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> TestMobile<span class="token punctuation">;</span>
 </code></pre>
 <p>Reducer and Action looks like:</p>
-<pre><code>export const testAction = userAgent =&gt; ({
-  type: 'TEST',
-  payload:userAgent
-});
+<pre class=" language-javascript"><code class="prism  language-javascript">    <span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">testAction</span> <span class="token operator">=</span> userAgent <span class="token operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      type<span class="token punctuation">:</span> <span class="token string">'TEST'</span><span class="token punctuation">,</span>
+      payload<span class="token punctuation">:</span>userAgent
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-const test = (state = 0, action) =&gt; {
-  switch (action.type) {
-    case 'TEST':
-      return action;
-    default:
-      return state;
-  }
-};
+    <span class="token keyword">const</span> <span class="token function-variable function">test</span> <span class="token operator">=</span> <span class="token punctuation">(</span>state <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> action<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">switch</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">case</span> <span class="token string">'TEST'</span><span class="token punctuation">:</span>
+          <span class="token keyword">return</span> action<span class="token punctuation">;</span>
+        <span class="token keyword">default</span><span class="token punctuation">:</span>
+          <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-export default test;
+    <span class="token keyword">export</span> <span class="token keyword">default</span> test<span class="token punctuation">;</span>
 </code></pre>
 <h2 id="props">Props</h2>
 
@@ -151,5 +170,3 @@ export default test;
 </body>
 
 </html>
-react-responsive-creator
-Mostrando react-responsive-creator
