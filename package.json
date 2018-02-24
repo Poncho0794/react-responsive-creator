@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "description": "responsive container creator with react",
   "main": "build/index.js",
-	"scripts": {
-	  "build": "babel lib -d build",
-	  "lint": "eslint lib/**; exit 0",
-	  "lint:watch": "esw -w lib/**",
-	  "prepublish": "npm run build"
-	},
+  "scripts": {
+    "build": "babel lib -d build",
+    "build:watch": "babel lib -w -d build",
+    "lint": "eslint lib/**; exit 0",
+    "lint:watch": "esw -w lib/**",
+    "prepublish": "npm run build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Poncho0794/react-responsive-creator.git"
